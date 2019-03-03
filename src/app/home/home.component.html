@@ -1,0 +1,32 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interview</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<div class="container">
+  <div class="row">
+      <h1>My Interview Portal</h1>
+      <hr>
+      <div class="col-md-12">
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                      <th>Test</th>
+                      <th>No of Questions</th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let test of testsArray; let i=index">
+                      <td>{{test.name}}</td>
+                      <td>{{test.questions.length}}</td>
+                      <td><button class="btn btn-warning" (click)="getTestQuestions(test._id,0)">Start Test</button></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>

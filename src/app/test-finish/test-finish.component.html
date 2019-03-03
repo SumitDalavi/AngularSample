@@ -1,0 +1,26 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interview</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+  <div *ngIf="(testDetailsFetched)" class="container">
+      <div class="row">
+          <h1>My Interview Portal</h1>
+          <hr>
+          <div class="col-md-12">
+              <div class="panel panel-default">
+                  <div class="panel-heading">{{testDetailsFetched[0].name}} - Result</div>
+                  <div class="panel-body">
+                          <h2 class="">Total no of Questions: {{testDetailsFetched[0].questions.length}}</h2>
+                          <h3 class="text-success">Correct Answers: {{correctCount}}
+                          <span class="text-danger">Wrong Answers: {{wrongCount}}</span>
+                          <span class="text-warning"> Unattempted: {{unAttempted}}</span></h3>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+

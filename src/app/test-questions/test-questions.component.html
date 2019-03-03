@@ -1,0 +1,36 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interview</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+    <div class="container">
+        <div class="row">
+        <h1>My Interview Portal</h1>
+            <hr>
+            <div *ngIf="(testDetailsFetched)" class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">{{testDetailsFetched[0].name}}</div>
+                    <div class="panel-body">
+                        <form>
+                            <label>{{testDetailsFetched[0].questions[questionId].questionText}}</label>
+                            <div *ngFor="let option of testDetailsFetched[0].questions[questionId].options; let i=index;" class="radio">
+                                <label>
+                                    <input type="radio" name="option" [value]="i" [disabled]="disableRadio" (click)="changedOption(i)"> {{option}}
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-footer">
+                        
+                      <button class="btn btn-success" [disabled]="!disableNext" (click)="getNextQuestion(questionId)">Next</button>
+                      <button class="pull-right btn btn-danger" (click)="getTestFinish(testDetailsFetched[0]._id)">Finish</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
